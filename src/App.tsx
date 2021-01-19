@@ -22,7 +22,7 @@ function App() {
 
     return (
         <div className={'App'}>
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+            {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
             {/*<OnOff on={switchOn} onChange={(on) => {setSwitchOn(on)}}/>*/}
 
             {/*<UncontrolledOnOff on={true}/>*/}
@@ -37,8 +37,8 @@ function App() {
             {/*           onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>*/}
             {/*Article 2*/}
             {/*<UncontrolledRating  />*/}
-            <Rating value={ratingValue} onClick={setratingValue} />
-            {/*<Rating value={1}/>*/}
+            {/*<Rating value={ratingValue} onClick={setratingValue} />*/}
+            {/*/!*<Rating value={1}/>*!/*/}
             {/*<Rating value={2}/>*/}
             {/*<Rating value={3}/>*/}
             {/*<Rating value={4}/>*/}
