@@ -3,12 +3,12 @@ import React, {useState} from "react";
 
 type OnOffType = {
     on: boolean
-onChange: (on:boolean) => void
+    onChange: (on: boolean) => void
 }
+
 // let on = false
 
 export function OnOff(props: OnOffType) {
-
 
 
     const onStyle = {
@@ -27,7 +27,7 @@ export function OnOff(props: OnOffType) {
         display: 'inline-block',
         marginLeft: '5px',
         padding: '2px',
-        backgroundColor:  props.on ? 'white' : 'red'
+        backgroundColor: props.on ? 'white' : 'red'
     }
     const indicatorStyle = {
         width: '10px',
@@ -36,7 +36,7 @@ export function OnOff(props: OnOffType) {
         borderRadius: '5px',
         display: 'inline-block',
         marginLeft: '5px',
-        backgroundColor:  props.on ? 'green' : 'red'
+        backgroundColor: props.on ? 'green' : 'red'
     }
 
     return <div>
