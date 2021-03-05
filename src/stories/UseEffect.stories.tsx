@@ -56,12 +56,12 @@ export const SetTimeoutExample = () => {
 export const ResetEffectExample = () => {
     const [counter, setCounter] = useState(1)
 
-    console.log('Component rendered')
+    console.log('Component rendered' + counter)
 
     useEffect(() => {
         console.log('Effect occurred' + counter)
 
-        return()=>{
+        return () => {
             console.log('Reset Effect')
         }
 
@@ -77,5 +77,47 @@ export const ResetEffectExample = () => {
         </button>
 
 
+    </>
+}
+
+export const KeysTrackerExample = () => {
+    const [text, setText] = useState('')
+
+    console.log('Component rendered' + text)
+
+    useEffect(() => {
+        const handler = (e:KeyboardEvent) => {
+            console.log(e.key)
+            setText((state) => state + e.key)
+        }
+        window.addEventListener('keypress', handler)
+        return () => {
+            window.removeEventListener('keypress', handler)
+        }
+
+    }, [])
+
+    return <>
+        Typed text: {text}
+    </>
+}
+export const SetTimeoutExample2 = () => {
+    const [text, setText] = useState('')
+
+    console.log('Component rendered' + text)
+
+    useEffect(() => {
+     const timeoutId = setTimeout(()=>{
+          console.log('TIMEOUT EXPIRED')
+          setText('3 second passed')
+      }, 3000)
+        return()=>{
+          clearTimeout(timeoutId)
+        }
+
+    }, [text])
+
+    return <>
+       text: {text}
     </>
 }
